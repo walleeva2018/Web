@@ -12,8 +12,33 @@ header {
   padding: 1rem;
 }
 
+main {
+  padding: 1rem;
+}
 header a {
   color: #fffbf1;
   font-style: oblique;
   text-decoration: none;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  border: #040404 solid;
+  margin: 1rem;
+}
+.product p {
+  font-size: 20px;
+}
+.product img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.product button {
+  padding: 1rem;
 }
