@@ -4,7 +4,6 @@ import Row from 'react-bootstrap/esm/Row';
 import { Helmet } from 'react-helmet-async';
 import { Store } from '../Store';
 import ListGroup from 'react-bootstrap/ListGroup';
-import ListGroupItem from 'react-bootstrap/esm/ListGroupItem';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -30,7 +29,7 @@ export default function Cart() {
     ctxdispatch({ type: 'Remove_from_cart', payload: item });
   };
   const Pay = () => {
-    navigate('/signin?redirect=/shipping');
+    navigate('/signin');
   };
 
   return (
