@@ -3,7 +3,7 @@ import HomePage from './views/HomePage';
 import Product from './views/Product';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import NavDropDown from 'react-bootstrap/NavDropDown';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import Badge from 'react-bootstrap/Badge';
 import Container from 'react-bootstrap/Container';
 import { useContext } from 'react';
@@ -49,25 +49,25 @@ function App() {
                       )}
                     </Link>
                     {userInfo ? (
-                      <NavDropDown
+                      <NavDropdown
                         title={
                           <span className="page-color">{userInfo.name}</span>
                         }
                         id="basic-nav-dropdown"
                       >
-                        <NavDropDown.Item>
+                        <NavDropdown.Item>
                           <Link to="/profile">
                             {' '}
                             <font color="Black">User Profile </font>
                           </Link>
-                        </NavDropDown.Item>
-                        <NavDropDown.Item>
+                        </NavDropdown.Item>
+                        <NavDropdown.Item>
                           <Link to="/orderhistory">
                             {' '}
                             <font color="Black">Order history </font>
                           </Link>{' '}
-                        </NavDropDown.Item>
-                        <NavDropDown.Divider />
+                        </NavDropdown.Item>
+                        <NavDropdown.Divider />
                         <Link
                           to="#signout"
                           className="dropdown-item"
@@ -75,7 +75,7 @@ function App() {
                         >
                           <font color="black">Sign Out </font>
                         </Link>
-                      </NavDropDown>
+                      </NavDropdown>
                     ) : (
                       <Link className="nav-link" to="/signin">
                         <font color="white">Sign In </font>
