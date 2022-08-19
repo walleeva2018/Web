@@ -48,6 +48,25 @@ function App() {
                       )}
                     </Link>
                     {userInfo ? (
+                      <div>
+                        <span className="page-color">{userInfo.name}</span>
+                        <Link to="/profile">
+                          {' '}
+                          <font color="Black">User Profile </font>
+                        </Link>
+                        <Link to="/orderhistory">
+                          {' '}
+                          <font color="Black">Order history </font>
+                        </Link>{' '}
+                        <Link
+                          to="#signout"
+                          className="dropdown-item"
+                          onClick={signoutHandler}
+                        >
+                          <font color="black">Sign Out </font>
+                        </Link>
+                      </div>
+                    ) : (
                       /*   <NavDropDown
                         title={
                           <span className="page-color">{userInfo.name}</span>
@@ -75,8 +94,7 @@ function App() {
                           <font color="black">Sign Out </font>
                         </Link>
                       </NavDropDown> */
-                      <div>tata</div>
-                    ) : (
+
                       <Link className="nav-link" to="/signin">
                         <font color="white">Sign In </font>
                       </Link>
