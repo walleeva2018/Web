@@ -3,7 +3,6 @@ import HomePage from './views/HomePage';
 import Product from './views/Product';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import NavDropDown from 'react-bootstrap/NavDropDown';
 import Badge from 'react-bootstrap/Badge';
 import Container from 'react-bootstrap/Container';
 import { useContext } from 'react';
