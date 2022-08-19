@@ -1,7 +1,4 @@
 {
-  "dependencies": {
-    "react-sky": "^1.1.0"
-  },
   "name": "project",
   "description": "all the functionality",
   "version": "1.0.0",
