@@ -85,7 +85,10 @@ function App() {
                       </Link>
                     )}
                     {userInfo && userInfo.isAdmin && (
-                      <NavDropdown title="Admin" id="admin-nav-dropdown">
+                      <NavDropdown
+                        title={<div className="page-color"> Admin</div>}
+                        id="admin-nav-dropdown"
+                      >
                         <Link to="/admin/dashboard">
                           <NavDropdown.Item> Dashboard </NavDropdown.Item>
                         </Link>
