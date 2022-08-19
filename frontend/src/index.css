@@ -26,6 +26,10 @@ header a {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  color: black;
+}
+.card-title {
+  color: black;
 }
 
 .img-large {
@@ -47,4 +51,20 @@ header a {
 
 nav {
   color: aliceblue;
+}
+.danger {
+  color: crimson;
+}
+.success {
+  color: darkgreen;
+}
+table head {
+  color: #fffbf1;
+}
+table td {
+  color: #fffbf1;
+}
+table thead th {
+  color: white;
+  font-size: 10pt;
 }

@@ -29,7 +29,7 @@ export default function Cart() {
     ctxdispatch({ type: 'Remove_from_cart', payload: item });
   };
   const Pay = () => {
-    navigate('/signin');
+    navigate('/shipping');
   };
 
   return (

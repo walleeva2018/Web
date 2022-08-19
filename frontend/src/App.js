@@ -11,6 +11,12 @@ import { Store } from './Store';
 import Cart from './views/Cart';
 import Signin from './views/Signin';
 import Shipping from './views/Shipping';
+import Signup from './views/Signup';
+import Payment from './views/Payment';
+import PlaceOrder from './views/PlaceOrder';
+import Order from './views/Order';
+import OrderHistory from './views/OrderHistory';
+import Profile from './views/Profile';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -19,6 +25,8 @@ function App() {
     ctxDispatch({ type: 'SIGNOUT' });
     localStorage.removeItem('userInfo');
     localStorage.removeItem('shippingAddress');
+    localStorage.removeItem('paymentMethod');
+    window.location.href = '/signin';
   };
 
   return (
@@ -26,52 +34,55 @@ function App() {
       <div className="d-flex flex-column site-container">
         <header>
           <div className="page-color">
-            <Navbar bg="dark">
+            <Navbar bg="dark" expand="lg">
               <Container>
                 <Link to="/"> SARAZ</Link>
-                <Nav className="me-auto">
-                  <Link to="/cart" className="nav-link">
-                    <font color="white">Cart</font>
-                    {cart.cartItem.length > 0 && (
-                      <Badge pill bg="danger">
-                        {cart.cartItem.reduce((a, c) => a + c.quantity, 0)}
-                      </Badge>
-                    )}
-                  </Link>
-                  {userInfo ? (
-                    <NavDropDown
-                      title={
-                        <span className="page-color">{userInfo.name}</span>
-                      }
-                      id="basic-nav-dropdown"
-                    >
-                      <NavDropDown.Item>
-                        <Link to="/profile">
-                          {' '}
-                          <font color="Black">User Profile </font>
-                        </Link>
-                      </NavDropDown.Item>
-                      <NavDropDown.Item>
-                        <Link to="/history">
-                          {' '}
-                          <font color="Black">Order history </font>
-                        </Link>{' '}
-                      </NavDropDown.Item>
-                      <NavDropDown.Divider />
-                      <Link
-                        to="#signout"
-                        className="dropdown-item"
-                        onClick={signoutHandler}
-                      >
-                        <font color="black">Sign Out </font>
-                      </Link>
-                    </NavDropDown>
-                  ) : (
-                    <Link className="nav-link" to="/signin">
-                      <font color="white">Sign In </font>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                  <Nav className="me-auto w-100 justify-content-end">
+                    <Link to="/cart" className="nav-link">
+                      <font color="white">Cart</font>
+                      {cart.cartItem.length > 0 && (
+                        <Badge pill bg="danger">
+                          {cart.cartItem.reduce((a, c) => a + c.quantity, 0)}
+                        </Badge>
+                      )}
                     </Link>
-                  )}
-                </Nav>
+                    {userInfo ? (
+                      <NavDropDown
+                        title={
+                          <span className="page-color">{userInfo.name}</span>
+                        }
+                        id="basic-nav-dropdown"
+                      >
+                        <NavDropDown.Item>
+                          <Link to="/profile">
+                            {' '}
+                            <font color="Black">User Profile </font>
+                          </Link>
+                        </NavDropDown.Item>
+                        <NavDropDown.Item>
+                          <Link to="/orderhistory">
+                            {' '}
+                            <font color="Black">Order history </font>
+                          </Link>{' '}
+                        </NavDropDown.Item>
+                        <NavDropDown.Divider />
+                        <Link
+                          to="#signout"
+                          className="dropdown-item"
+                          onClick={signoutHandler}
+                        >
+                          <font color="black">Sign Out </font>
+                        </Link>
+                      </NavDropDown>
+                    ) : (
+                      <Link className="nav-link" to="/signin">
+                        <font color="white">Sign In </font>
+                      </Link>
+                    )}
+                  </Nav>
+                </Navbar.Collapse>
               </Container>
             </Navbar>
           </div>
@@ -84,6 +95,12 @@ function App() {
               <Route path="/Cart" element={<Cart />} />
               <Route path="/signin" element={<Signin />} />
               <Route path="/shipping" element={<Shipping />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/payment" element={<Payment />} />
+              <Route path="/placeorder" element={<PlaceOrder />} />
+              <Route path="/orderhistory" element={<OrderHistory />} />
+              <Route path="/order/:id" element={<Order />} />
+              <Route path="/profile" element={<Profile />} />
             </Routes>
           </Container>
         </main>

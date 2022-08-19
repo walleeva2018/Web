@@ -4,7 +4,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Product from '../Components/Product';
 import { Helmet } from 'react-helmet-async';
-import Sky from 'react-sky';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -60,25 +59,6 @@ function HomePage() {
           </Row>
         )}
       </div>
-      <Sky
-        images={{
-          /* FORMAT AS FOLLOWS */
-          0: 'https://earthsky.org/upl/2020/01/rigel-astropixels-Fred-Espenak-800.png' /* You can pass as many images as you want */,
-          1: 'https://cdn.pixabay.com/photo/2016/11/25/23/15/moon-1859616__340.jpg',
-          2: 'https://earthsky.org/upl/2020/01/rigel-astropixels-Fred-Espenak-800.png',
-          3: 'https://earthsky.org/upl/2020/01/rigel-astropixels-Fred-Espenak-800.png',
-          /* 3: your other image... */
-          /* 4: your other image... */
-          /* 5: your other image... */
-          /* ... */
-        }}
-        how={
-          130
-        } /* Pass the number of images Sky will render chosing randomly */
-        time={40} /* time of animation */
-        size={'100px'} /* size of the rendered images */
-        background={'palettedvioletred'} /* color of background */
-      />
     </div>
   );
 }
