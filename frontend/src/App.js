@@ -50,21 +50,6 @@ function App() {
                     {userInfo ? (
                       <div>
                         <span className="page-color">{userInfo.name}</span>
-                        <Link to="/profile">
-                          {' '}
-                          <font color="Black">User Profile </font>
-                        </Link>
-                        <Link to="/orderhistory">
-                          {' '}
-                          <font color="Black">Order history </font>
-                        </Link>{' '}
-                        <Link
-                          to="#signout"
-                          className="dropdown-item"
-                          onClick={signoutHandler}
-                        >
-                          <font color="black">Sign Out </font>
-                        </Link>
                       </div>
                     ) : (
                       /*   <NavDropDown
