@@ -49,7 +49,7 @@ function App() {
                       )}
                     </Link>
                     {userInfo ? (
-                      <NavDropDown
+                      /*   <NavDropDown
                         title={
                           <span className="page-color">{userInfo.name}</span>
                         }
@@ -75,7 +75,8 @@ function App() {
                         >
                           <font color="black">Sign Out </font>
                         </Link>
-                      </NavDropDown>
+                      </NavDropDown> */
+                      <div>tata</div>
                     ) : (
                       <Link className="nav-link" to="/signin">
                         <font color="white">Sign In </font>
