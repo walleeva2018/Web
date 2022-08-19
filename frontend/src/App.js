@@ -3,6 +3,7 @@ import HomePage from './views/HomePage';
 import Product from './views/Product';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import NavDropDown from 'react-bootstrap/NavDropDown';
 import Badge from 'react-bootstrap/Badge';
 import Container from 'react-bootstrap/Container';
 import { useContext } from 'react';
@@ -48,11 +49,7 @@ function App() {
                       )}
                     </Link>
                     {userInfo ? (
-                      <div>
-                        <span className="page-color">{userInfo.name}</span>
-                      </div>
-                    ) : (
-                      /*   <NavDropDown
+                      <NavDropDown
                         title={
                           <span className="page-color">{userInfo.name}</span>
                         }
@@ -78,8 +75,8 @@ function App() {
                         >
                           <font color="black">Sign Out </font>
                         </Link>
-                      </NavDropDown> */
-
+                      </NavDropDown>
+                    ) : (
                       <Link className="nav-link" to="/signin">
                         <font color="white">Sign In </font>
                       </Link>
