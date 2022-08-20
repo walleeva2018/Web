@@ -144,14 +144,7 @@ function App() {
                   </ProtectedRoutes>
                 }
               />
-              <Route
-                path="/admin/dashboard"
-                element={
-                  <AdminRoute>
-                    <Dashboard />
-                  </AdminRoute>
-                }
-              />
+              <Route path="/admin/dashboard" element={<Dashboard />} />
             </Routes>
           </Container>
         </main>
