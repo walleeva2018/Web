@@ -90,16 +90,24 @@ function App() {
                         id="admin-nav-dropdown"
                       >
                         <NavDropdown.Item>
-                          <Link to="/admin/dashboard">Dashboard</Link>
+                          <Link to="/admin/dashboard">
+                            <font color="Black">Dashboard </font>
+                          </Link>
                         </NavDropdown.Item>
                         <NavDropdown.Item>
-                          <Link to="/admin/orderlist">Orders</Link>
+                          <Link to="/admin/orderlist">
+                            <font color="Black">Orders </font>
+                          </Link>
                         </NavDropdown.Item>
                         <NavDropdown.Item>
-                          <Link to="/admin/productslist">Products</Link>
+                          <Link to="/admin/productslist">
+                            <font color="Black">Products </font>
+                          </Link>
                         </NavDropdown.Item>
                         <NavDropdown.Item>
-                          <Link to="/admin/userlist">Users</Link>
+                          <Link to="/admin/userlist">
+                            <font color="Black">Users</font>
+                          </Link>
                         </NavDropdown.Item>
                       </NavDropdown>
                     )}
