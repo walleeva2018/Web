@@ -37,7 +37,7 @@ export default function Signup() {
 
   useEffect(() => {
     if (userInfo) {
-      navigate('/');
+      navigate('/signin');
     }
   }, [navigate, userInfo]);
 
