@@ -89,18 +89,18 @@ function App() {
                         title={<div className="page-color"> Admin</div>}
                         id="admin-nav-dropdown"
                       >
-                        <Link to="/admin/dashboard">
-                          <NavDropdown.Item> Dashboard </NavDropdown.Item>
-                        </Link>
-                        <Link to="/admin/productlist">
-                          <NavDropdown.Item> Products </NavDropdown.Item>
-                        </Link>
-                        <Link to="/admin/userlist">
-                          <NavDropdown.Item> Users </NavDropdown.Item>
-                        </Link>
-                        <Link to="/admin/orderlist">
-                          <NavDropdown.Item> Orders </NavDropdown.Item>
-                        </Link>
+                        <NavDropdown.Item>
+                          <Link to="/admin/dashboard">Dashboard</Link>
+                        </NavDropdown.Item>
+                        <NavDropdown.Item>
+                          <Link to="/admin/orderlist">Orders</Link>
+                        </NavDropdown.Item>
+                        <NavDropdown.Item>
+                          <Link to="/admin/productslist">Products</Link>
+                        </NavDropdown.Item>
+                        <NavDropdown.Item>
+                          <Link to="/admin/userlist">Users</Link>
+                        </NavDropdown.Item>
                       </NavDropdown>
                     )}
                   </Nav>
@@ -144,7 +144,14 @@ function App() {
                   </ProtectedRoutes>
                 }
               />
-              <Route path="/admin/dashboard" element={<Dashboard />} />
+              <Route
+                path="/admin/dashboard"
+                element={
+                  <AdminRoute>
+                    <Dashboard />
+                  </AdminRoute>
+                }
+              />
             </Routes>
           </Container>
         </main>
