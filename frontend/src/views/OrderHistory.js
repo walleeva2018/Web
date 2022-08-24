@@ -76,18 +76,14 @@ export default function OrderHistory() {
                   <td>{order.totalPrice.toFixed(2)}</td>
                   <td>
                     {order.isPaid ? (
-                      <div className="success">
-                        order.paidAt.substring(0,10)
-                      </div>
+                      <div className="success">Paid</div>
                     ) : (
                       <div className="danger">'No'</div>
                     )}
                   </td>
                   <td>
                     {order.isDelivered ? (
-                      <div className="success">
-                        order.deliveredAt.substring(0,10)
-                      </div>
+                      <div className="success">Delivered With Love</div>
                     ) : (
                       <div className="danger">'No'</div>
                     )}

@@ -6,8 +6,10 @@ import { Helmet } from 'react-helmet-async';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
+import StripeCheckout from 'react-stripe-checkout';
+import axios from 'axios';
+import Button from 'react-bootstrap/esm/Button';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -28,11 +30,13 @@ export default function Order() {
   const { userInfo } = state;
   const params = useParams();
   const { id: orderId } = params;
+
   const [{ loading, error, order }, dispatch] = useReducer(reducer, {
     loading: true,
     order: {},
     error: '',
   });
+
   useEffect(() => {
     const fetchOrder = async () => {
       try {
@@ -52,6 +56,26 @@ export default function Order() {
       fetchOrder();
     }
   }, [order, userInfo, orderId, navigate]);
+
+  async function tokenHandler(token) {
+    const response = await axios.post('/checkout', {
+      token,
+      order,
+    });
+    const { status } = response.data;
+    console.log('Response:', response.data);
+    const d = 3;
+    if (status === 'success') {
+      const updatePay = await axios.put('/updatepay', {
+        order,
+        d,
+      });
+      console.log(updatePay.isPaid);
+      navigate('/bankpayment');
+    } else {
+      window.alert('Something went wrong ');
+    }
+  }
   return loading ? (
     <div className="page-color">Loading...</div>
   ) : error ? (
@@ -73,7 +97,7 @@ export default function Order() {
                 {order.shippingAddress.city},
               </Card.Text>
               {order.isDelivered ? (
-                <div className="success">Delivered at {order.deliveredAt}</div>
+                <div className="success">Delivered with Love</div>
               ) : (
                 <div className="danger">Not Delivered </div>
               )}
@@ -87,7 +111,7 @@ export default function Order() {
                 {order.paymentMethod}
               </Card.Text>
               {order.isPaid ? (
-                <div className="success">Paid at {order.paidAt}</div>
+                <div className="success">Paid</div>
               ) : (
                 <div className="danger">Not Paid </div>
               )}
@@ -146,6 +170,19 @@ export default function Order() {
                     <Col>Total</Col>
                     <Col>{order.totalPrice.toFixed(2)}</Col>
                   </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  {order.isPaid ? (
+                    <Button>Already PAID</Button>
+                  ) : (
+                    <StripeCheckout
+                      stripeKey="pk_test_51LZQUTGYTrEwzPzdLZFVLCRpPLE8W9nhjQo9O8jmDmedyG0FlywVGuZyVoc9cKTXLcHrLY45mdUY2TCx4j0dwDaT00xhUW7H8V"
+                      token={tokenHandler}
+                      amount={order.totalPrice.toFixed(2) * 100}
+                      email={userInfo.email}
+                      name={order.shippingAddress.fullName}
+                    />
+                  )}
                 </ListGroup.Item>
               </ListGroup>
             </Card.Body>

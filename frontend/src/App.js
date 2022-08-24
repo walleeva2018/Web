@@ -20,6 +20,10 @@ import Profile from './views/Profile';
 import ProtectedRoutes from './Components/ProtectedRoutes';
 import Dashboard from './views/Dashboard';
 import AdminRoute from './Components/AdminRoute';
+import BankPayment from './views/BankPayment';
+import OrderList from './views/OrderList.js';
+import ProductList from './views/ProductList';
+import UserList from './views/UserList';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -100,7 +104,7 @@ function App() {
                           </Link>
                         </NavDropdown.Item>
                         <NavDropdown.Item>
-                          <Link to="/admin/productslist">
+                          <Link to="/admin/productlist">
                             <font color="Black">Products </font>
                           </Link>
                         </NavDropdown.Item>
@@ -127,6 +131,8 @@ function App() {
               <Route path="/shipping" element={<Shipping />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/payment" element={<Payment />} />
+              <Route path="/bankpayment" element={<BankPayment />} />
+
               <Route
                 path="/placeorder"
                 element={
@@ -157,6 +163,30 @@ function App() {
                 element={
                   <AdminRoute>
                     <Dashboard />
+                  </AdminRoute>
+                }
+              />
+              <Route
+                path="/admin/orderlist"
+                element={
+                  <AdminRoute>
+                    <OrderList />
+                  </AdminRoute>
+                }
+              />
+              <Route
+                path="/admin/productlist"
+                element={
+                  <AdminRoute>
+                    <ProductList />
+                  </AdminRoute>
+                }
+              />
+              <Route
+                path="/admin/userlist"
+                element={
+                  <AdminRoute>
+                    <UserList />
                   </AdminRoute>
                 }
               />

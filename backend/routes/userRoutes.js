@@ -6,6 +6,31 @@ import { generateToken, isAuth } from '../utils.js';
 
 const userRouter = express.Router();
 
+userRouter.get(
+  '/getall',
+  expressAsyncHandler(async (req, res) => {
+    const users = await User.find({});
+    res.send(users);
+  })
+);
+
+userRouter.put(
+  '/update',
+  expressAsyncHandler(async (req, res) => {
+    const { user, d } = req.body;
+    const updateuser = await User.findById(user._id);
+    if (updateuser) {
+      updateuser.isAdmin = true;
+
+      const updatedUser = await updateuser.save();
+      res.send({
+        updatedUser,
+      });
+    } else {
+      res.status(404).send({ message: 'User not found' });
+    }
+  })
+);
 userRouter.post(
   '/signin',
   expressAsyncHandler(async (req, res) => {
