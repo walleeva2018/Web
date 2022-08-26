@@ -10,7 +10,7 @@ export default function Payment() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { shippingAddress, paymentMethod } = state;
   const [paymentMethodName, setPaymentMethod] = useState(
-    paymentMethod || 'Paypal'
+    paymentMethod || 'Online Payment'
   );
   useEffect(() => {
     if (!shippingAddress.address) {
@@ -34,20 +34,20 @@ export default function Payment() {
           <div className="mb-3">
             <Form.Check
               type="radio"
-              id="PayPal"
-              label="PayPal"
-              value="PayPal"
-              checked={paymentMethodName === 'PayPal'}
+              id="Online Payment"
+              label="Online Payment"
+              value="Online Payment"
+              checked={paymentMethodName === 'Online Payment'}
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
           </div>
           <div className="mb-3">
             <Form.Check
               type="radio"
-              id="Stripe"
-              label="Stripe"
-              value="Stripe"
-              checked={paymentMethodName === 'Stripe'}
+              id="Cash On Delivery"
+              label="Cash On Delivery"
+              value="Cash On Delivery"
+              checked={paymentMethodName === 'Cash On Delivery'}
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
           </div>

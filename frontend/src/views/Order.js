@@ -171,19 +171,23 @@ export default function Order() {
                     <Col>{order.totalPrice.toFixed(2)}</Col>
                   </Row>
                 </ListGroup.Item>
-                <ListGroup.Item>
-                  {order.isPaid ? (
-                    <Button>Already PAID</Button>
-                  ) : (
-                    <StripeCheckout
-                      stripeKey="pk_test_51LZQUTGYTrEwzPzdLZFVLCRpPLE8W9nhjQo9O8jmDmedyG0FlywVGuZyVoc9cKTXLcHrLY45mdUY2TCx4j0dwDaT00xhUW7H8V"
-                      token={tokenHandler}
-                      amount={order.totalPrice.toFixed(2) * 100}
-                      email={userInfo.email}
-                      name={order.shippingAddress.fullName}
-                    />
-                  )}
-                </ListGroup.Item>
+                {order.paymentMethod === 'Cash On Delivery' ? (
+                  <Button>Prepare The Cash</Button>
+                ) : (
+                  <ListGroup.Item>
+                    {order.isPaid ? (
+                      <Button>Already PAID</Button>
+                    ) : (
+                      <StripeCheckout
+                        stripeKey="pk_test_51LZQUTGYTrEwzPzdLZFVLCRpPLE8W9nhjQo9O8jmDmedyG0FlywVGuZyVoc9cKTXLcHrLY45mdUY2TCx4j0dwDaT00xhUW7H8V"
+                        token={tokenHandler}
+                        amount={order.totalPrice.toFixed(2) * 100}
+                        email={userInfo.email}
+                        name={order.shippingAddress.fullName}
+                      />
+                    )}
+                  </ListGroup.Item>
+                )}
               </ListGroup>
             </Card.Body>
           </Card>

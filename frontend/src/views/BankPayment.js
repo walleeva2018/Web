@@ -16,14 +16,9 @@ export default function BankPayment() {
           <h1> CONGRATULATIONS YOUR PAYMENT IS SUCCESSFUL </h1>
         </p>
         <p>
-          This text is styled with some of the text formatting properties. The
-          heading uses the text-align, text-transform, and color properties. The
-          paragraph is indented, aligned, and the space between characters is
-          specified. The underline is removed from this colored
-          <a target="_blank" href="tryit.asp?filename=trycss_text">
-            "Try it Yourself"
-          </a>{' '}
-          link.
+          Thanks for being with us . Your order will be delivered to you with in
+          3-5 working days if you live in sylhet , 5-9 working days of live
+          elsewhere . Your patience is everything to us
         </p>
       </div>
     </div>

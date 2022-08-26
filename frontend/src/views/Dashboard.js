@@ -42,7 +42,7 @@ export default function Dashboard() {
       UnpaidOrderCount = UnpaidOrderCount + 1;
       AmountDue = AmountDue + order[key].totalPrice;
     }
-    if (order[key].isdelivered === true) {
+    if (order[key].isDelivered === true) {
       Delivered = Delivered + 1;
     } else {
       NotDelivered = NotDelivered + 1;
