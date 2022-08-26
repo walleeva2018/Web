@@ -80,10 +80,11 @@ export default function UserList() {
                   </td>
                   <td>
                     {user.isAdmin ? (
-                      <Button>Already Admin</Button>
+                      <Button className="button">Already Admin</Button>
                     ) : (
                       <Button
                         type="button"
+                        className="button"
                         onClick={async () => {
                           const d = 4;
                           await axios.put('/api/users/update', {

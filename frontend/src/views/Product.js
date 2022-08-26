@@ -90,7 +90,9 @@ function Product() {
             <ListGroupItem>Rating : {product.rating}</ListGroupItem>
             <ListGroupItem>Rated By : {product.reviews} People</ListGroupItem>
           </ListGroup>
-          <Button onClick={AddtocartHandler}>Add to Cart</Button>
+          <Button className="button" onClick={AddtocartHandler}>
+            Add to Cart
+          </Button>
         </Col>
       </Row>
     </div>

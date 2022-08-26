@@ -64,7 +64,8 @@ export default function OrderList() {
                 <th>PAID</th>
                 <th>Payment Method</th>
                 <th>DELIVERED</th>
-                <th>ACTIONS</th>
+                <th>Delivery Update</th>
+                <th>Payment Update</th>
               </tr>
             </thead>
             <tbody>
@@ -81,7 +82,7 @@ export default function OrderList() {
                     )}
                   </td>
                   <td>
-                    {order.paymentMethod === 'PayPal' ? (
+                    {order.paymentMethod === 'Cash On Delivery' ? (
                       <div>Cash On Delivery </div>
                     ) : (
                       <div>Online Payment </div>
@@ -96,8 +97,11 @@ export default function OrderList() {
                   </td>
                   <td>
                     {order.isDelivered ? (
+                      <Button className="button">Delivered</Button>
+                    ) : (
                       <Button
                         type="button"
+                        className="button"
                         onClick={async () => {
                           const d = 2;
                           await axios.put('/updatepay', {
@@ -109,8 +113,32 @@ export default function OrderList() {
                       >
                         Deliver?
                       </Button>
+                    )}
+                  </td>
+                  <td>
+                    {order.isPaid ? (
+                      <Button className="button">Paid</Button>
                     ) : (
-                      <Button>Delivered</Button>
+                      <div>
+                        {order.paymentMethod === 'Cash On Delivery' ? (
+                          <Button
+                            type="button"
+                            className="button"
+                            onClick={async () => {
+                              const d = 3;
+                              await axios.put('/updatepay', {
+                                order,
+                                d,
+                              });
+                              navigate('/');
+                            }}
+                          >
+                            Paid?
+                          </Button>
+                        ) : (
+                          <Button className="button">Online Payment</Button>
+                        )}
+                      </div>
                     )}
                   </td>
                 </tr>

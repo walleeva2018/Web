@@ -89,7 +89,10 @@ export default function Profile() {
             ></Form.Control>
           </Form.Group>
           <div className="mb-3">
-            <Button type="submit"> Update </Button>
+            <Button className="button" type="submit">
+              {' '}
+              Update{' '}
+            </Button>
           </div>
         </Form>
       </div>

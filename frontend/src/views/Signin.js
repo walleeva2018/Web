@@ -66,7 +66,10 @@ export default function Signin() {
             ></Form.Control>
           </Form.Group>
           <div className="mb-3">
-            <Button type="submit"> Sign In </Button>
+            <Button className="button" type="submit">
+              {' '}
+              Sign In{' '}
+            </Button>
           </div>
           <div>
             Dont Have an Account ? <Link to={`/signup`}>Create Account </Link>

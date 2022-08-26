@@ -76,7 +76,10 @@ export default function Signup() {
             ></Form.Control>
           </Form.Group>
           <div className="mb-3">
-            <Button type="submit"> Sign Up </Button>
+            <Button className="button" type="submit">
+              {' '}
+              Sign Up{' '}
+            </Button>
           </div>
           <div>
             Already Have an Account ? <Link to={`/signin`}>Login </Link>

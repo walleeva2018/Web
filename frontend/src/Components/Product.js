@@ -39,7 +39,9 @@ function Product(props) {
         <Card.Text>
           <strong>${product.price}</strong>
         </Card.Text>
-        <Button onClick={() => ADDTOCART(product)}>ADD TO CART</Button>
+        <Button className="button" onClick={() => ADDTOCART(product)}>
+          ADD TO CART
+        </Button>
       </Card.Body>
     </Card>
   );

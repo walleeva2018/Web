@@ -137,10 +137,10 @@ table thead th {
   background: linear-gradient(135deg, #753370 0%, #298096 100%);
   padding: 15px;
   border: none;
-  border-radius: 50px;
+  border-radius: 30px;
   color: white;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   margin-top: 10px;
   width: 100%;
   letter-spacing: 0.11rem;

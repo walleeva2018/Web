@@ -77,7 +77,9 @@ export default function Shipping() {
           </Form.Group>
 
           <div className="mb-3">
-            <Button type="submit">Proceed</Button>
+            <Button className="button" type="submit">
+              Proceed
+            </Button>
           </div>
         </Form>
       </div>

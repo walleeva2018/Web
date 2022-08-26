@@ -92,6 +92,7 @@ export default function OrderHistory() {
                     <Button
                       type="button"
                       variant="light"
+                      className="button"
                       onClick={() => {
                         navigate(`/order/${order._id}`);
                       }}

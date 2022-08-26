@@ -34,10 +34,14 @@ productRouter.get('/:id', async (req, res) => {
 productRouter.put(
   '/update',
   expressAsyncHandler(async (req, res) => {
-    const { id, d } = req.body;
+    const { id, d, p } = req.body;
     const updateproduct = await Product.findById(id[d]);
     if (updateproduct) {
-      updateproduct.quantity = updateproduct.quantity + 1;
+      if (p === 1) {
+        updateproduct.quantity = updateproduct.quantity + 1;
+      } else {
+        updateproduct.quantity = updateproduct.quantity - 1;
+      }
 
       const updatedProduct = await updateproduct.save();
       res.send({

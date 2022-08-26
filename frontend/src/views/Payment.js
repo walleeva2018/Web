@@ -52,7 +52,9 @@ export default function Payment() {
             />
           </div>
           <div className="mb-3">
-            <Button type="submit">Continue</Button>
+            <Button className="button" type="submit">
+              Continue
+            </Button>
           </div>
         </Form>
       </div>

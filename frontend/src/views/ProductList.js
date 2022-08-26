@@ -70,7 +70,8 @@ export default function ProductList() {
               <th>Category</th>
               <th>Rating</th>
               <th>Quantity</th>
-              <th>Actions</th>
+              <th>Stock Up</th>
+              <th>Stock Down</th>
             </tr>
           </thead>
           <tbody>
@@ -84,16 +85,37 @@ export default function ProductList() {
               <td>
                 <Button
                   type="button"
+                  className="button"
                   onClick={async () => {
                     const d = 0;
+                    const p = 1;
                     await axios.put('/api/products/update', {
                       id,
                       d,
+                      p,
                     });
                     navigate('/admin/productlist');
                   }}
                 >
                   Increase
+                </Button>
+              </td>
+              <td>
+                <Button
+                  type="button"
+                  className="button"
+                  onClick={async () => {
+                    const d = 0;
+                    const p = 2;
+                    await axios.put('/api/products/update', {
+                      id,
+                      d,
+                      p,
+                    });
+                    navigate('/admin/productlist');
+                  }}
+                >
+                  Decrease
                 </Button>
               </td>
             </tr>
@@ -107,16 +129,37 @@ export default function ProductList() {
               <td>
                 <Button
                   type="button"
+                  className="button"
                   onClick={async () => {
                     const d = 1;
+                    const p = 1;
                     await axios.put('/api/products/update', {
                       id,
                       d,
+                      p,
                     });
                     navigate('/admin/productlist');
                   }}
                 >
                   Increase
+                </Button>
+              </td>
+              <td>
+                <Button
+                  type="button"
+                  className="button"
+                  onClick={async () => {
+                    const d = 1;
+                    const p = 2;
+                    await axios.put('/api/products/update', {
+                      id,
+                      d,
+                      p,
+                    });
+                    navigate('/admin/productlist');
+                  }}
+                >
+                  Decrease
                 </Button>
               </td>
             </tr>
@@ -130,16 +173,37 @@ export default function ProductList() {
               <td>
                 <Button
                   type="button"
+                  className="button"
                   onClick={async () => {
                     const d = 2;
+                    const p = 1;
                     await axios.put('/api/products/update', {
                       id,
                       d,
+                      p,
                     });
                     navigate('/admin/productlist');
                   }}
                 >
                   Increase
+                </Button>
+              </td>
+              <td>
+                <Button
+                  type="button"
+                  className="button"
+                  onClick={async () => {
+                    const d = 2;
+                    const p = 2;
+                    await axios.put('/api/products/update', {
+                      id,
+                      d,
+                      p,
+                    });
+                    navigate('/admin/productlist');
+                  }}
+                >
+                  Decrease
                 </Button>
               </td>
             </tr>

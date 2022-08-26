@@ -61,6 +61,7 @@ export default function Cart() {
                     <Col md={3}>
                       <Button
                         variant="light"
+                        className="button"
                         disabled={item.quantity === 1}
                         onClick={() => UpdateCartItem(item, item.quantity - 1)}
                       >
@@ -69,6 +70,7 @@ export default function Cart() {
                       <span>{item.quantity}</span>{' '}
                       <Button
                         variant="light"
+                        className="button"
                         onClick={() => UpdateCartItem(item, item.quantity + 1)}
                         disabled={item.quantity === item.countInStock}
                       >
@@ -77,7 +79,11 @@ export default function Cart() {
                     </Col>
                     <Col md={3}>${item.price}</Col>
                     <Col md={2}>
-                      <Button variant="light" onClick={() => RemoveItem(item)}>
+                      <Button
+                        variant="light"
+                        className="button"
+                        onClick={() => RemoveItem(item)}
+                      >
                         <i className="fas fa-trash"></i>
                       </Button>
                     </Col>
@@ -97,7 +103,11 @@ export default function Cart() {
             </Card.Body>
           </Card>
 
-          <Button disabled={cartItem.quantity === 0} onClick={Pay}>
+          <Button
+            className="button"
+            disabled={cartItem.quantity === 0}
+            onClick={Pay}
+          >
             Pay Now
           </Button>
         </Col>

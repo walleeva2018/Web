@@ -207,6 +207,7 @@ export default function PlaceOrder() {
                   <div className="d-grid">
                     <Button
                       type="button"
+                      className="button"
                       onClick={placeOrderHandler}
                       disabled={cartItem.length === 0}
                     >
