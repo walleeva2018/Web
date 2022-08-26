@@ -33,12 +33,6 @@ export default function Signin() {
     }
   };
 
-  useEffect(() => {
-    if (userInfo) {
-      navigate('/');
-    }
-  }, [navigate, userInfo]);
-
   return (
     <Container className="small-container">
       <Helmet>
