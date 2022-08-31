@@ -82,7 +82,7 @@ function Product() {
           <ListGroup>
             <ListGroupItem>Product Name : {product.name}</ListGroupItem>
             <ListGroupItem>Category : {product.category}</ListGroupItem>
-            <ListGroupItem>Price(in BDT): ${product.price}</ListGroupItem>
+            <ListGroupItem>Price(in BDT): {product.price} TK</ListGroupItem>
           </ListGroup>
         </Col>
         <Col md={3}>

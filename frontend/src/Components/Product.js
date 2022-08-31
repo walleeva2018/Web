@@ -37,7 +37,7 @@ function Product(props) {
           {' '}
         </Rating>
         <Card.Text>
-          <strong>${product.price}</strong>
+          <strong>{product.price} TK </strong>
         </Card.Text>
         <Button className="button" onClick={() => ADDTOCART(product)}>
           ADD TO CART
